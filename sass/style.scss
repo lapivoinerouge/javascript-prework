@@ -50,11 +50,11 @@ body {
 }
 
 .score-bar {
-    width: 400px;
+    width: 450px;
     height: 40px;
     padding: 10px;
     margin: 10px 0;
-    background-color: $life-green;
+    background: $life-green;
     font-size: 20px;
     border: 3px grey solid;
 }
@@ -76,7 +76,7 @@ body {
             display: none;
             height: 250px;
             width: 500px;
-            
+            left: -30px;
         }
     }
 

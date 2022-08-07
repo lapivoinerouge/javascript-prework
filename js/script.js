@@ -2,7 +2,6 @@ let playerPoints = 0;
 let computerPoints = 0;
 
 function playGame(playerInput) {
-    clearMessages();
     clearBoard();
 
     function getMoveName(argMoveId) {
@@ -13,18 +12,14 @@ function playGame(playerInput) {
         } else if (argMoveId == 3) {
             return 'scissors';
         }
-        printMessage('Nie znam ruchu o id ' + argMoveId + '.');
-        return 'nieznany ruch';
+        return 'unknown';
     }
     
-    function displayResult(argComputerMove, argPlayerMove) {
-        printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
-    
+    function displayResult(computerMove, playerMove) {
         if (playerMove == computerMove) {
-            printMessage('Remis!');
             playerPoints++;
             computerPoints++;
-        } else if (playerMove != 'nieznany ruch') {
+        } else {
             let userWon;
             if (playerMove == 'rock') {
                 if (computerMove == 'paper') {
@@ -48,48 +43,20 @@ function playGame(playerInput) {
 
             if (userWon) {
                 playerPoints++;
-                printMessage('Wygrałeś!');
             } else {
                 computerPoints++;
-                printMessage('Przegrałeś!');
             }
-        } else {
-            printMessage('Ruch ' + playerInput + ' nie istnieje. Dozwolone ruchy to: 1, 2, 3. Spróbuj jeszcze raz.')
         }
     }
     
-    // computer move
     let randomNumber = Math.floor(Math.random() * 3 + 1);
-    console.log('Wylosowana liczba to: ' + randomNumber);
     let computerMove = getMoveName(randomNumber);
     
-    // player move
-    console.log('Gracz wpisał: ' + playerInput);
     let playerMove = getMoveName(playerInput);
     
-    // result
     showChoice(computerMove, playerMove);
     displayResult(computerMove, playerMove);
     updateScore();
-}
-
-function updateScore() {
-    let playerScoreDiv = document.getElementById('player-score');
-    let computerScoreDiv = document.getElementById('computer-score');
-
-    playerScoreDiv.innerHTML = playerPoints;
-    computerScoreDiv.innerHTML = computerPoints;
-}
-
-function showChoice(computerMove, playerMove) {
-    document.getElementById('computer-choice-' + computerMove).style.display = 'block';
-    document.getElementById('player-choice-' + playerMove).style.display = 'block';
-}
-
-function clearBoard() {
-    const hands = document.querySelectorAll('[id*=-choice-]');
-    
-    hands.forEach(hand => hand.style.display = 'none');
 }
 
 updateScore();
