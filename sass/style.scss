@@ -76,7 +76,7 @@ body {
             display: none;
             height: 250px;
             width: 500px;
-            left: -30px;
+            // left: -30px;
         }
     }
 
@@ -125,29 +125,27 @@ footer {
 
     .button {
         margin: 0 20px;
+        height: 80px;
+        width: 80px;
+        background-color: $primary-light;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
     }
 
     #play-rock {
-        height: 90px;
-        width: 90px;
         background-image: url('/images/choice-rock.png');
         background-size: contain;
-        background-repeat: no-repeat;
+        
     }
 
     #play-paper {
-        height: 90px;
-        width: 90px;
         background-image: url('/images/choice-paper.png');
-        background-size: contain;
-        background-repeat: no-repeat;
+        background-size: 70%;
     }
 
     #play-scissors {
-        height: 90px;
-        width: 90px;
         background-image: url('/images/choice-scissors.png');
-        background-size: contain;
-        background-repeat: no-repeat;
+        background-size: 80%;
     }
 }
