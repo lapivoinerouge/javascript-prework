@@ -40,7 +40,7 @@ function updateScore() {
 
 function checkGameOver() {
     if (playerPoints >= 10 || computerPoints >= 10) {
-        const buttons = document.querySelectorAll('button');
+        const buttons = document.querySelectorAll('[class=button]');
         buttons.forEach(button => button.style.display = 'none');
     }
 }
