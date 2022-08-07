@@ -3,17 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Kamień, papier, nożyce</title>
-	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
-		<div id="buttons">
+        <div id="result">
+            <div class="score-container">
+                <div id="player-score" class="score"></div>
+                <div id="player-score-bar" class="score-bar">PLAYER</div>
+            </div>
+            <div class="score-container">
+                <div id="computer-score" class="score"></div>
+                <div id="computer-score-bar" class="score-bar">COMPUTER</div>
+            </div>
+        </div>
+        <div id="messages"></div>
+    </div>
+    <section id="board-section">
+        <div id="player-choice">
+            <div id="player-choice-rock"></div>
+            <div id="player-choice-paper"></div>
+            <div id="player-choice-scissors"></div>
+        </div>
+        <div id="computer-choice">
+            <div id="computer-choice-rock"></div>
+            <div id="computer-choice-paper"></div>
+            <div id="computer-choice-scissors"></div>
+        </div>
+    </section>
+    <footer>
+        <div id="buttons">
             <button type="button" id="play-rock">Kamień</button>
             <button type="button" id="play-paper">Papier</button>
             <button type="button" id="play-scissors">Nożyce</button>
         </div>
-		<div id="messages"></div>
-	</div>
+    </footer>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
 </body>
